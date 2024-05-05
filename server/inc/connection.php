@@ -1,0 +1,1 @@
+<?php $con =  mysqli_connect("localhost", "root", "" , "kourier_db") or die("Database Connection Fail"); ?>

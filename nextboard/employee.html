@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="next.css">
+
+	<title>Admin Dashboard</title>
+</head>
+<body>
+
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Kourier</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="next.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="customer.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Customer</span>
+				</a>
+			</li>
+			<li>
+				<a href="pricetabel.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Price Table</span>
+				</a>
+			</li>
+			<li>
+				<a href="courier.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Courier</span>
+				</a>
+			</li>
+			<li>
+				<a href="msg.html">
+					<i class='bx bxs-message-rounded-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="branches.html">
+					<i class='bx bx-git-branch'></i>
+					<span class="text">Branches</span>
+				</a>
+			</li>
+
+			<li class="active">
+				<a href="employee.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Employee</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="area.html">
+					<i class='bx bxs-edit-location' ></i>
+					<span class="text">Area</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<!-- <li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li> -->
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">0</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="images/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Employee</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Employee</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a> -->
+			</div>
+
+        </main>
+		<!-- MAIN -->
+
+		<!-- <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 'admin') : ?>
+                    <div class="col-lg-2">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EmployeeModal"> Add
+                            New</button>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="page-content">
+                <section class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="row">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>NIC</th>
+                                        <th>Address</th>
+                                        <th>Branch</th>
+                                        <th>Gender</th>
+
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>NIC</th>
+                                        <th>Address</th>
+                                        <th>Branch</th>
+                                        <th>Gender</th>
+
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <?php
+                                    if ($_SESSION['admin'] != 'admin') {
+                                        $getall = getemployeeByEmail($_SESSION['admin']);
+                                    } else {
+                                        $getall = getAllemployee();
+                                    }
+
+                                    while ($row = mysqli_fetch_assoc($getall)) {
+                                        $emp_id = $row['emp_id'];
+                                    ?>
+
+
+                                        <tr>
+
+                                            <td>
+                                                <?php echo $row['name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['email']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['phone']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['nic']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['address']; ?>
+                                            </td>
+                                            <td>
+                                                <?php $getCat =  getBranchByID($row['branch_id']);
+                                                if ($row4 = mysqli_fetch_assoc($getCat)) {
+                                                    echo $row4['branch_name'];
+                                                } ?>
+                                            </td>
+                                            <td>
+                                                <?php if ($row['gender'] == "1") {
+                                                    echo "Male";
+                                                } else {
+                                                    echo "Female";
+                                                } ?>
+                                            </td>
+                                            <td> <a href="empolyee_edit.php?emp_id=<?php echo $emp_id; ?>" class="btn btn-darkblue"> <i class="fa-solid fa-edit"></i>
+                                                </a>
+                                                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 'admin') : ?>
+                                                    <button type="button" onclick="deleteData(<?php echo $row['emp_id']; ?>,'employee', 'emp_id')" class="btn btn-darkblue"> <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                <?php endif; ?>
+
+                                            </td>
+                                        </tr>
+
+                                    <?php } ?>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </section>
+            </div> -->
+
+
+
+
+	</section>
+	<!-- CONTENT -->
+	
+	<!-- ionicons -->
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<script src="next.js"></script>
+</body>
+</html>    

@@ -1,0 +1,40 @@
+.request-heading {
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+ }
+ 
+ #courier-request-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+ }
+ 
+ #courier-request-form label {
+    margin-bottom: 5px;
+ }
+ 
+ #courier-request-form input, select {
+    margin-bottom: 20px;
+    padding: 5px;
+ }
+ 
+ #courier-request-form button {
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    transition-duration: 0.4s;
+ }
+ 
+ #courier-request-form  button:hover {
+    background-color: #45a049;
+ }

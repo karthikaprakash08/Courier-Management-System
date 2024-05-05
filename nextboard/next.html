@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="next.css">
+
+	<title>Admin Dashboard</title>
+</head>
+<body>
+
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Kourier</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="next.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="customer.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Customer</span>
+				</a>
+			</li>
+			<li>
+				<a href="pricetabel.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Price Table</span>
+				</a>
+			</li>
+			<li>
+				<a href="courier.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Courier</span>
+				</a>
+			</li>
+			<li>
+				<a href="msg.html">
+					<i class='bx bxs-message-rounded-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="branches.html">
+					<i class='bx bx-git-branch'></i>
+					<span class="text">Branches</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="employee.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Employee</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="area.html">
+					<i class='bx bxs-edit-location' ></i>
+					<span class="text">Area</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<!-- <li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li> -->
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">0</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="images/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a> -->
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-layer' ></i>				
+					<span class="text">
+						<h3>2234</h3>
+						<p>Branches</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">
+						<h3>1137</h3>
+						<p>Customers</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>1097</h3>
+						<p>Employee</p>
+					</span>
+				</li>
+
+				<li>
+					<i class='bx bxs-registered'></i>
+					<span class="text">
+						<h3>1097</h3>
+						<p>Request</p>
+					</span>
+				</li>
+
+				<li>
+					<i class='bx bxl-product-hunt' ></i>
+					<span class="text">
+						<h3>1097</h3>
+						<p>Pending</p>
+					</span>
+				</li>
+
+				<li>
+					<i class='bx bxs-hand'></i>
+					<span class="text">
+						<h3>1097</h3>
+						<p>Accepted</p>
+					</span>
+				</li>
+
+				<li>
+					<i class='bx bxs-notification-off'></i>
+					<span class="text">
+						<h3>1097</h3>
+						<p>Cancelled</p>
+					</span>
+				</li>
+
+				<li>
+					<i class='bx bx-package'></i>
+					<span class="text">
+						<h3>1097</h3>
+						<p>Delivered</p>
+					</span>
+				</li>
+			</ul>
+
+
+			<!-- <div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Recent Orders</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Delivery Date</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<img src="images/customer02.jpg" alt="">
+									<p>Abbas</p>
+								</td>
+								<td>20/09/23</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/bsc.jpg" alt="">
+									<p>John Doe</p>
+								</td>
+								<td>25/09/23</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/bsc.jpg">
+									<p>Santhosh</p>
+								</td>
+								<td>22/09/23</td>
+								<td><span class="status process">Process</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/bsc.jpg">
+									<p>Akbar</p>
+								</td>
+								<td>26/09/23</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/bsc.jpg">
+									<p>David</p>
+								</td>
+								<td>25/09/23</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div>
+			</div> -->
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<!-- ionicons -->
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<script src="next.js"></script>
+</body>
+</html>

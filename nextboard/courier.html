@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="next.css">
+
+	<title>Admin Dashboard</title>
+</head>
+<body>
+
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Kourier</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="next.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="customer.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Customer</span>
+				</a>
+			</li>
+			<li>
+				<a href="pricetabel.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Price Table</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="courier.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Courier</span>
+				</a>
+			</li>
+			<li>
+				<a href="msg.html">
+					<i class='bx bxs-message-rounded-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="branches.html">
+					<i class='bx bx-git-branch'></i>
+					<span class="text">Branches</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="employee.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Employee</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="area.html">
+					<i class='bx bxs-edit-location' ></i>
+					<span class="text">Area</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<!-- <li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li> -->
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">0</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="images/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Courier</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Courier</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a> -->
+			</div>
+
+        </main>
+		<!-- MAIN -->
+		<!-- <div class="col-lg-3">
+				<a href="add_courier.php" class="btn btn-primary"> Register Customer</a>
+			</div>
+			<div class="col-lg-3">
+				<a href="add_request.php" class="btn btn-primary"> Add
+					Courier Request</a>
+			</div>
+		</div>
+		<div class="page-content">
+			<?php
+			$getall = getAllTracking();
+
+			while ($row = mysqli_fetch_assoc($getall)) {
+				$request_id = $row['request_id'];
+			?>
+				<article class="card mt-5" style="border: 2px solid #2c3e50">
+					<header class="card-header text-white" style="background-color: #2c3e50; border-radius: 0px;">
+						Orders /
+						Tracking </header>
+					<div class="card-body mt-3">
+						<h6>Traking ID: #<?php echo $row['request_id']; ?> </h6>
+						<article class="card">
+							<div class="card-body row">
+
+								<div class="col"> <strong>Shipping Address:</strong>
+									<br><?php echo $row['name']; ?>
+									<br><?php echo $row['phone']; ?>
+									<br><?php echo $row['red_address']; ?>
+								</div>
+								<div class="col"> <strong>Recever Mobile:</strong>
+									<br><?php echo $row['res_phone']; ?>
+								</div>
+								<div class="col"> <strong>Current Status:</strong>
+									<br>
+									<?php if ($row['tracking_status'] == 1) {
+										echo 'Order Pending';
+									} else if ($row['tracking_status'] == 2) {
+										echo 'Prepare Order';
+									} else if ($row['tracking_status'] == 3) {
+										echo 'Shipped Order';
+									} else if ($row['tracking_status'] == 4) {
+										echo 'Deliverd';
+									} else if ($row['tracking_status'] == 5) {
+										echo 'Canceled';
+									} ?>
+								</div>
+								<div class="col"> <strong>Requested Date:</strong>
+									<br><?php echo $row['date_updated']; ?>
+								</div>
+							</div>
+							<div class="card-body row">
+
+								<div class="col"> <strong>Weight:</strong>
+									<br><?php echo $row['weight']; ?>
+								</div>
+								<div class="col"> <strong>Sender Mobile:</strong>
+									<br><?php echo $row['sender_phone']; ?>
+								</div>
+								<div class="col"> <strong>Send Location</strong>
+									<br>
+									<?php
+									$getLocation = getAllAreabyID($row['send_location']);
+									$row2 = mysqli_fetch_assoc($getLocation);
+									echo $row2['area_name'];
+									?>
+								</div>
+								<div class="col"> <strong>End Location</strong>
+									<br>
+									<?php
+									$getLocation = getAllAreabyID($row['end_location']);
+									$row2 = mysqli_fetch_assoc($getLocation);
+									echo $row2['area_name'];
+									?>
+								</div>
+							</div>
+						</article>
+						<?php if ($row['tracking_status'] != 5) { ?>
+							<div class="track">
+
+								<div class="step <?php if ($row['tracking_status'] == 1 || $row['tracking_status'] == 2 || $row['tracking_status'] == 3 || $row['tracking_status'] == 4) {
+														echo 'active';
+													} ?>">
+									<span class="icon"> <i class="fa fa-check"></i> </span>
+									<span class="text">Order confirmed</span>
+								</div>
+								<div class="step <?php if ($row['tracking_status'] == 2 || $row['tracking_status'] == 3 || $row['tracking_status'] == 4) {
+														echo 'active';
+													} ?>">
+									<span class="icon"> <i class="fa fa-user"></i> </span>
+									<span class="text">Prepare Order</span>
+								</div>
+								<div class="step <?php if ($row['tracking_status'] == 3 || $row['tracking_status'] == 4) {
+														echo 'active';
+													} ?>">
+									<span class="icon"> <i class="fa fa-truck"></i> </span>
+									<span class="text"> Shipped Order </span>
+								</div>
+								<div class="step <?php if ($row['tracking_status'] == 4) {
+														echo 'active';
+													} ?>">
+									<span class="icon"> <i class="fa fa-box"></i> </span>
+									<span class="text">Deliverd</span>
+								</div>
+							</div>
+						<?php } ?>
+						<hr>
+						<div class="row">
+
+
+							<div class="col-md-5">
+								<label for="tracking_status" class="form-label">Order Status</label>
+								<select onchange='updateData(this, "<?php echo $request_id; ?>","tracking_status", "request", "request_id")' id="tracking_status <?php echo $request_id; ?>" class='form-control norad tx12' name="tracking_status" type='text'>
+									<option value="1" <?php if ($row['tracking_status'] == "1") echo "selected"; ?>>
+										Order Pending
+									</option>
+									<option value="2" <?php if ($row['tracking_status'] == "2") echo "selected"; ?>>
+										Prepare Order
+									</option>
+									<option value="3" <?php if ($row['tracking_status'] == "3") echo "selected"; ?>>
+										Shipped Order
+									</option>
+									<option value="4" <?php if ($row['tracking_status'] == "4") echo "selected"; ?>>
+										Deliverd
+									</option>
+									<option value="5" <?php if ($row['tracking_status'] == "5") echo "selected"; ?>>
+										Canceled
+									</option>
+								</select>
+							</div>
+							<div class="col-md-4">
+								<label for="tracking_status" class="form-label">Order Delete : </label>
+								<button type="button" onclick="deleteData(<?php echo $row['request_id']; ?>,'request', 'request_id')" class="btn btn-darkblue"> <i class="fa-solid fa-trash"></i>
+								</button>
+							</div>
+
+						</div>
+					</div>
+				</article>
+			<?php } ?>
+		</div> -->
+	</section>
+	<!-- CONTENT -->
+	
+	<!-- ionicons -->
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<script src="next.js"></script>
+</body>
+</html>    
